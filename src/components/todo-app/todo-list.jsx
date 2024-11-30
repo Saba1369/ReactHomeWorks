@@ -1,11 +1,18 @@
 import React, { useState, useRef } from "react";
 import Button from "../button";
 
-const TodoList = ({ list }) => {
+const TodoList = ({ list , help }) => {
   const [showSaveButton, setShowSaveButton] = useState(false);
   const handleButtons = () => {
     setShowSaveButton((showSaveButton) => !showSaveButton);
   };
+ 
+  const deleteFromList = (index) => {
+    const updatedList = [...list]
+    updatedList.splice(index, 1);
+    help(updatedList)
+   }
+
   const pRef = useRef(null);
   return (
     <ul className="mt-4 font-light max-h-[300px] overflow-y-auto px-1">
@@ -20,11 +27,12 @@ const TodoList = ({ list }) => {
           </p>
           <div className="space-x-2">
             <Button
+            type="button"
               color={`${showSaveButton ? "bg-green-500" : "bg-yellow-500"}`}
               title={`${showSaveButton ? "Save" : "Edit"}`}
               onClick={handleButtons}
             />
-            <Button color="bg-red-700" title="Remove" hidden={showSaveButton} />
+            <Button type="button" color="bg-red-700" title="Remove" hidden={showSaveButton} onClick={deleteFromList}/>
           </div>
         </li>
       ))}
