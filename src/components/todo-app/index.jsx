@@ -11,11 +11,14 @@ const TodoApp = () => {
   const addToList = (newItem) => {
     setTodoList([newItem,...todoList]);
   };
+  const updateList = (updatedlist) =>{
+    setTodoList(...updatedlist);
+  }
   return (
     <div className={`flex flex-col gap-2 max-w-[400px] ${isDark ? "text-white" : "text-black"}`}>
       <h2 className=" font-semibold text-lg">Todo List</h2>
       <TodoForm handleAddItem={addToList} />
-      <TodoList list={todoList} />
+      <TodoList list={todoList} help={updateList}/>
     </div>
   );
 };
