@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Button from "../button";
 
-const TodoList = ({ list , help }) => {
+const TodoList = ({ list , handleUpdateList }) => {
   const [showSaveButton, setShowSaveButton] = useState(false);
   const handleButtons = () => {
     setShowSaveButton((showSaveButton) => !showSaveButton);
@@ -10,7 +10,7 @@ const TodoList = ({ list , help }) => {
   const deleteFromList = (index) => {
     const updatedList = [...list]
     updatedList.splice(index, 1);
-    help(updatedList)
+    handleUpdateList(updatedList) 
    }
 
   const pRef = useRef(null);
