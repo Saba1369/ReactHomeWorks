@@ -5,11 +5,10 @@ const TodoList = ({ list }) => {
   const [showSaveButton, setShowSaveButton] = useState(false);
   const handleButtons = () => {
     setShowSaveButton((showSaveButton) => !showSaveButton);
-    console.log(showSaveButton);
   };
   const pRef = useRef(null);
   return (
-    <ul className="mt-4 text-white font-light max-h-[300px] overflow-y-auto px-1">
+    <ul className="mt-4 font-light max-h-[300px] overflow-y-auto px-1">
       {list.map((item, index) => (
         <li key={index} className="flex justify-between items-center pb-2 gap-2">
           <p

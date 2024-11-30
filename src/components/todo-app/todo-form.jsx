@@ -17,7 +17,7 @@ const TodoForm = ({ handleAddItem }) => {
         type="text"
         value={inputValue}
         placeholder="Add new todo"
-        className="border-[1px] rounded-[6px] p-2"
+        className="border-[1px] rounded-[6px] p-2 text-black"
         onChange={handleChangeInput}
       />
       <Button title="Add" color="bg-emerald-500" disabled={inputValue === ""} />
