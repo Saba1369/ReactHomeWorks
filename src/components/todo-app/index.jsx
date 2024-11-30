@@ -12,7 +12,7 @@ const TodoApp = () => {
     setTodoList([newItem,...todoList]);
   };
   const updateList = (updatedlist) =>{
-    setTodoList(...updatedlist);
+    setTodoList([...updatedlist]);
   }
   return (
     <div className={`flex flex-col gap-2 max-w-[400px] ${isDark ? "text-white" : "text-black"}`}>
