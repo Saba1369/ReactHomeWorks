@@ -4,7 +4,7 @@ const Button = ({ type = "submit", onClick, title, color, ...props}) => {
     <button
       type={type}
       onClick={onClick && onClick}
-      className={`${color} p-2 rounded-[6px] text-white hover:bg-blue-700 transition`}
+      className={`${color} p-2 rounded-[6px] text-white hover:bg-blue-700 transition text-white`}
       {...props}
     >
       {title}
